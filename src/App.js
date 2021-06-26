@@ -1,10 +1,9 @@
-import WatchItem from "./components/watchItem";
+import WatchItemsList from "./components/WatchItemsList";
 
 function App() {
     return (
         <div className="App">
-            <WatchItem/>
-            <WatchItem/>
+            <WatchItemsList/>
         </div>
     );
 }
