@@ -25,8 +25,26 @@ const watchItemsList = [
         image: 'https://invader.be/wp-content/uploads/2020/07/Iron-man-VR.jpg',
         description: 'After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil.',
         yearRelease: 2006,
-        isWatched: false,
+        isWatched: true,
         id: 3,
+    },
+    {
+        name: 'Captain America: The First Avenger',
+        dateCreated: new Date('06/27/2021 17:36'),
+        image: 'https://cdn.britannica.com/30/182830-050-96F2ED76/Chris-Evans-title-character-Joe-Johnston-Captain.jpg',
+        description: 'Steve Rogers, a rejected military soldier, transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.',
+        yearRelease: 2011,
+        isWatched: true,
+        id: 4,
+    },
+    {
+        name: 'Thor',
+        dateCreated: new Date('06/27/2021 17:55'),
+        image: 'https://upload.wikimedia.org/wikipedia/en/9/95/Thor_%28film%29_poster.jpg',
+        description: 'The powerful but arrogant god Thor is cast out of Asgard to live amongst humans in Midgard (Earth), where he soon becomes one of their finest defenders.',
+        yearRelease: 2011,
+        isWatched: false,
+        id: 5,
     },
 
 
