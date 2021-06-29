@@ -1,4 +1,6 @@
 import WatchItemsList from "./components/WatchItemsList";
+import {useState} from "react";
+import NewItemForm from "./components/new-item-form-components/NewItemForm";
 
 const watchItemsList = [
     {
@@ -44,17 +46,57 @@ const watchItemsList = [
         description: 'The powerful but arrogant god Thor is cast out of Asgard to live amongst humans in Midgard (Earth), where he soon becomes one of their finest defenders.',
         yearRelease: 2011,
         isWatched: false,
-        id: 5,
+        id: 6,
     },
-
-
-
+    {
+        name: 'Ant-Man and the Wasp: Quantumania',
+        dateCreated: new Date('06/29/2021 19:24'),
+        image: 'https://images-na.ssl-images-amazon.com/images/I/81I08wcUyBL._SL1500_.jpg',
+        description: 'The further adventures of Ant-Man and the Wasp.',
+        yearRelease: 2023,
+        isWatched: false,
+        id: 7,
+    },
+    {
+        name: 'Fantastic Beasts and Where to Find Them',
+        dateCreated: new Date('06/29/2021 20:42'),
+        image: 'https://images-na.ssl-images-amazon.com/images/I/91PdOec4bFL._SL1500_.jpg',
+        description: 'The adventures of writer Newt Scamander in New York\'s secret community of witches and wizards seventy years before Harry Potter reads his book in school.',
+        yearRelease: 2016,
+        isWatched: true,
+        id: 8,
+    },
 ]
 
+const _watchItemsMap = {}
+watchItemsList.forEach(i => _watchItemsMap[i.id] = i)
+
+
 function App() {
+    const [watchItems, setWatchItems] = useState(_watchItemsMap);
+
+    const toggleIsWatched = id => {
+        const item = watchItems[id];
+        setWatchItems(prevState => {
+            const newState = {...prevState}
+            newState[id] = {...item, isWatched: !item.isWatched}
+            return newState
+        })
+    }
+
+    const handleDeleteItem = id => {
+        setWatchItems(prevState => {
+            const newState = {...prevState}
+            delete newState[id]
+            return newState
+        })
+    }
+
     return (
         <div className="App">
-            <WatchItemsList list={watchItemsList}/>
+            <NewItemForm/>
+            <WatchItemsList list={Object.values(watchItems)} toggleIsWatched={toggleIsWatched}
+                            onDeleteItem={handleDeleteItem}/>
         </div>
     );
 }
