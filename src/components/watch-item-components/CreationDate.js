@@ -17,7 +17,7 @@ const dateToString = date => {
 const CreationDate = ({date}) => {
     return (
         <div className='mt-auto user-select-none' style={style}>
-            <FiClock className='me-1'/>
+            <FiClock className='mr-1'/>
             {dateToString(date)}
         </div>
     );

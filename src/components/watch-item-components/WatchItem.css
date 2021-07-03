@@ -29,22 +29,20 @@
   aspect-ratio: 1 / 1;
   overflow: hidden;
   flex-shrink: 0;
+  display: grid;
 }
+
 .image > img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
-.not-watched > .image > .icon {
-  display: none;
-}
-
 .watched {
-  opacity: 30%;
+  filter: opacity(40%);
 }
 
-.watched > .image > * {
+.image > * {
   grid-column: 1;
   grid-row: 1;
 }

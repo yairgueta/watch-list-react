@@ -1,8 +1,8 @@
 import React, {useEffect, useRef} from 'react';
 import {FaMinus} from 'react-icons/fa'
-import './header.css'
+import './title.css'
 
-const Header = ({name, year, onClick}) => {
+const Title = ({name, year, onClick}) => {
     const textElementRef = useRef(null)
 
     useEffect(() => {
@@ -13,8 +13,8 @@ const Header = ({name, year, onClick}) => {
     })
 
     return (
-        <div className='header-container d-flex'>
-            <div className='header h4 mb-0 flex-grow-1 pe-2'>
+        <div className='title-container d-flex'>
+            <div className='title h4 mb-0 flex-grow-1 pe-2'>
                 <div className='text' ref={textElementRef}>
                     {`${name} (${year})`}
                 </div>
@@ -25,6 +25,6 @@ const Header = ({name, year, onClick}) => {
 };
 
 
-Header.propTypes = {};
+Title.propTypes = {};
 
-export default Header;
+export default Title;
