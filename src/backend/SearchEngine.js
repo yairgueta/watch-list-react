@@ -11,9 +11,9 @@ export async function searchKeyword(keyword) {
     const promise = await fetch(`${search}${keyword}`, {method: "GET", signal: searchController.signal})
         .catch(()=>{})
     searchController = null;
-    const res = await promise.json();
-    if (res.Response) {
-        return res.Search
+    const res = await promise?.json();
+    if (res?.Response) {
+        return res.Search ?? []
     } else {
         return []
     }
@@ -22,7 +22,7 @@ export async function searchKeyword(keyword) {
 
 
 async function main() {
-    const s = await searchKeyword("Avengers")
+    const s = await searchKeyword("lll")
     console.log(s)
 }
 

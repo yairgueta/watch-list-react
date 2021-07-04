@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import {fetchAll, fetchOne, postNewItem, setIsWatchedItem, removeAnItem} from './backend/UserData';
 import {searchKeyword} from './backend/SearchEngine'
 import {Spinner} from "react-bootstrap";
+import SearchBar from "./components/new-item-form-components/SearchBar";
 
 
 function App() {
@@ -35,10 +36,11 @@ function App() {
 
     return (
         <div className="App">
-            <NewItemForm/>
-            {isLoading && <Spinner animation='border'/>}
-            {!isLoading && <WatchItemsList list={Object.values(watchItems)} toggleIsWatched={toggleIsWatched}
-                            onDeleteItem={handleDeleteItem}/>}
+            {/*<NewItemForm searchKeyword={searchKeyword}/>*/}
+            {/*{isLoading && <Spinner animation='border'/>}*/}
+            {/*{!isLoading && <WatchItemsList list={Object.values(watchItems)} toggleIsWatched={toggleIsWatched}*/}
+            {/*                onDeleteItem={handleDeleteItem}/>}*/}
+            <SearchBar searchKeyword={searchKeyword}/>
         </div>
     );
 }
