@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import Modal from 'react-bootstrap/Modal'
-import {Button, Dropdown, ListGroup, OverlayTrigger} from "react-bootstrap";
+import {Button} from "react-bootstrap";
 import SearchBar from "./SearchBar";
 
 const NewItemForm = ({onAdd, searchKeyword}) => {
     const [show, setShow] = useState(true);
 
-    const handleAdd = () => {
-
+    const handleAdd = (item) => {
+        console.log(item)
     }
 
     const handleClose = () => {
@@ -29,7 +29,7 @@ const NewItemForm = ({onAdd, searchKeyword}) => {
                     <Button type="button" className="btn-close" aria-label="Close" onClick={handleClose}/>
                 </Modal.Header>
                 <Modal.Body>
-                    <SearchBar searchKeyword={searchKeyword}/>
+                    <SearchBar searchKeyword={searchKeyword} onQuerySelected={handleAdd}/>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant='secondary' onClick={handleClose}>Cancel</Button>

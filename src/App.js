@@ -36,11 +36,11 @@ function App() {
 
     return (
         <div className="App">
-            {/*<NewItemForm searchKeyword={searchKeyword}/>*/}
-            {/*{isLoading && <Spinner animation='border'/>}*/}
-            {/*{!isLoading && <WatchItemsList list={Object.values(watchItems)} toggleIsWatched={toggleIsWatched}*/}
-            {/*                onDeleteItem={handleDeleteItem}/>}*/}
-            <SearchBar searchKeyword={searchKeyword}/>
+            <NewItemForm searchKeyword={searchKeyword}/>
+            {isLoading && <Spinner animation='border'/>}
+            {!isLoading && <WatchItemsList list={Object.values(watchItems)} toggleIsWatched={toggleIsWatched}
+                            onDeleteItem={handleDeleteItem}/>}
+            {/*<SearchBar searchKeyword={searchKeyword}/>*/}
         </div>
     );
 }
