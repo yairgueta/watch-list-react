@@ -18,3 +18,4 @@ WatchItemsList.propTypes = {
 };
 
 export default WatchItemsList;
+

@@ -22,20 +22,22 @@ const NewItemForm = ({onAdd, searchKeyword}) => {
 
     return (
         <>
-            <Button onClick={handleShow}>show</Button>
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header>
-                    <Modal.Title>Add a New Content!</Modal.Title>
-                    <Button type="button" className="btn-close" aria-label="Close" onClick={handleClose}/>
-                </Modal.Header>
-                <Modal.Body>
-                    <SearchBar searchKeyword={searchKeyword} onQuerySelected={handleAdd}/>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant='secondary' onClick={handleClose}>Cancel</Button>
-                    <Button variant='primary'>Add</Button>
-                </Modal.Footer>
-            </Modal>
+            {/*<Button onClick={handleShow}>show</Button>*/}
+            {/*<Modal show={show} onHide={handleClose}>*/}
+            {/*    <Modal.Header>*/}
+            {/*        <Modal.Title>Add a New Content!</Modal.Title>*/}
+            {/*        <Button type="button" className="btn-close" aria-label="Close" onClick={handleClose}/>*/}
+            {/*    </Modal.Header>*/}
+            {/*    <Modal.Body>*/}
+            {/*        <SearchBar searchKeyword={searchKeyword} onQuerySelected={handleAdd}/>*/}
+            {/*    </Modal.Body>*/}
+            {/*    <Modal.Footer>*/}
+            {/*        <Button variant='secondary' onClick={handleClose}>Cancel</Button>*/}
+            {/*        <Button variant='primary'>Add</Button>*/}
+            {/*    </Modal.Footer>*/}
+            {/*</Modal>*/}
+            <SearchBar searchKeyword={searchKeyword} onQuerySelected={handleAdd}/>
+
         </>
     );
 };
